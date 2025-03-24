@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLIGHT TO KABUKICHO</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&family=Staatliches&display=swap');
         
         :root {
             --primary: #ff3e6c;
@@ -24,7 +24,7 @@
         
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background-color: var(--dark-blue);
+            background: linear-gradient(to bottom, var(--dark-blue) 0%, #000000 100%);
             color: var(--text);
             line-height: 1.6;
         }
@@ -64,15 +64,35 @@
             text-align: center;
             z-index: 1;
             padding: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .poster-container {
+            margin-bottom: 30px;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .poster-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
         }
         
         .hero-title {
-            font-size: 4rem;
+            font-family: 'Staatliches', cursive;
+            font-size: 4.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--text);
             text-shadow: 0 0 15px rgba(255, 62, 108, 0.8);
-            letter-spacing: 2px;
+            letter-spacing: 4px;
+            transform: perspective(500px) rotateX(10deg);
+            text-transform: uppercase;
         }
         
         .hero-subtitle {
@@ -121,11 +141,11 @@
         }
         
         .section-dark {
-            background-color: var(--dark-blue);
+            background-color: transparent;
         }
         
         .section-light {
-            background-color: var(--light-blue);
+            background-color: rgba(26, 42, 68, 0.5);
         }
         
         .section-title {
@@ -297,23 +317,42 @@
         
         /* Neon effect */
         .neon-text {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff3e6c, 0 0 20px #ff3e6c, 0 0 25px #ff3e6c;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 15px #ff3e6c,
+                0 0 20px #ff3e6c,
+                0 0 25px #ff3e6c,
+                0 0 30px #ff3e6c;
             animation: neon 1.5s ease-in-out infinite alternate;
         }
         
         @keyframes neon {
             from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff3e6c, 0 0 20px #ff3e6c, 0 0 25px #ff3e6c;
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 15px #ff3e6c,
+                    0 0 20px #ff3e6c,
+                    0 0 25px #ff3e6c,
+                    0 0 30px #ff3e6c;
             }
             to {
-                text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #ff3e6c, 0 0 15px #ff3e6c, 0 0 20px #ff3e6c;
+                text-shadow: 
+                    0 0 2px #fff,
+                    0 0 5px #fff,
+                    0 0 10px #ff3e6c,
+                    0 0 15px #ff3e6c,
+                    0 0 20px #ff3e6c,
+                    0 0 25px #ff3e6c;
             }
         }
         
         /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 3rem;
+                transform: perspective(300px) rotateX(5deg);
             }
             
             .hero-subtitle {
@@ -342,6 +381,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <div class="poster-container">
+                <img src="/api/placeholder/800/500" alt="FLIGHT TO KABUKICHO 포스터" class="poster-image">
+            </div>
             <h1 class="hero-title neon-text">FLIGHT TO KABUKICHO</h1>
             <p class="hero-subtitle">환락가를 동경하는 그녀,<br>일상의 속박에서부터 환락의 자유까지의 비행</p>
             <p class="hero-date">2025.04.12 SAT 7:30PM</p>
@@ -377,8 +419,8 @@
         </div>
     </section>
 
-    <!-- Band Section -->
-    <section id="band" class="section section-light">
+    <!-- MonoCircle Section -->
+    <section id="monocircle" class="section section-light">
         <div class="container">
             <h2 class="section-title">ABOUT MONOCIRCLE</h2>
             <div class="about-content">
@@ -401,6 +443,9 @@ MonoCircle만의 공연 흐름을 만들었다.
 특히나, 이번 공연의 시작부터 한 배를 같이 탄 Musa의 감각적인 디지털 사운드 디자인 색채가 이 플롯에, 그리고 더 나아가 아날로그 악기들과 만나 빛을 발한다.
                 </p>
             </div>
+            <div class="monocircle-image" style="margin-top: 40px; text-align: center;">
+                <img src="/api/placeholder/600/350" alt="MonoCircle" style="max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+            </div>
         </div>
     </section>
 
@@ -409,37 +454,17 @@ MonoCircle만의 공연 흐름을 만들었다.
         <div class="container">
             <h2 class="section-title">ARTIST LINEUP</h2>
             <div class="artists-grid">
-                <!-- Part 1 Vocals -->
+                <!-- Musa -->
+                <!-- Musa -->
                 <div class="artist-card">
-                    <img src="/api/placeholder/400/250" alt="HutsunoKo" class="artist-image">
+                    <img src="/api/placeholder/400/250" alt="Musa" class="artist-image">
                     <div class="artist-info">
-                        <h3 class="artist-name">HutsunoKo</h3>
-                        <p class="artist-role">VOCAL - PART 1</p>
-                        <p class="artist-description">일본 시티팝의 감성을 현대적으로 재해석하는 보컬리스트. 이번 공연에서 80년대 버블 경제 시대의 화려한 감성을 표현합니다.</p>
+                        <h3 class="artist-name">Musa</h3>
+                        <p class="artist-role">SOUND DESIGNER</p>
+                        <p class="artist-description">감각적인 디지털 사운드 디자인으로 아날로그 악기들과 만나 이번 공연의 전체적인 사운드 컨셉을 완성합니다.</p>
                     </div>
                 </div>
                 
-                <div class="artist-card">
-                    <img src="/api/placeholder/400/250" alt="QueenDia" class="artist-image">
-                    <div class="artist-info">
-                        <h3 class="artist-name">QueenDia</h3>
-                        <p class="artist-role">VOCAL - PART 1</p>
-                        <p class="artist-description">강렬한 음색과 표현력으로 시티팝의 여성 보컬리스트를 연상시키는 아티스트. 가부키초 환락가의 화려함을 노래합니다.</p>
-                    </div>
-                </div>
-                
-                <!-- Part 2 Vocal -->
-                <div class="artist-card">
-                    <img src="/api/placeholder/400/250" alt="KitschNeko" class="artist-image">
-                    <div class="artist-info">
-                        <h3 class="artist-name">KitschNeko</h3>
-                        <p class="artist-role">VOCAL - PART 2</p>
-                        <p class="artist-description">90년대 후반부터 2000년대의 일본 음악을 대표하는 헤이세이 시대의 차가운 감성을 담아내는 보컬리스트.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="artists-grid" style="margin-top: 30px;">
                 <!-- Players -->
                 <div class="artist-card">
                     <img src="/api/placeholder/400/250" alt="Band Members" class="artist-image">
@@ -456,22 +481,61 @@ MonoCircle만의 공연 흐름을 만들었다.
                         </p>
                     </div>
                 </div>
-                
+            </div>
+            
+            <div class="artists-grid" style="margin-top: 30px;">
+                <!-- Vocals -->
                 <div class="artist-card">
-                    <img src="/api/placeholder/400/250" alt="Musa" class="artist-image">
+                    <img src="/api/placeholder/400/250" alt="FutsunoKo" class="artist-image">
                     <div class="artist-info">
-                        <h3 class="artist-name">Musa</h3>
-                        <p class="artist-role">SOUND DESIGNER</p>
-                        <p class="artist-description">감각적인 디지털 사운드 디자인으로 아날로그 악기들과 만나 이번 공연의 전체적인 사운드 컨셉을 완성합니다.</p>
+                        <h3 class="artist-name">FutsunoKo</h3>
+                        <p class="artist-role">VOCAL - PART 1</p>
+                        <p class="artist-description">일본 시티팝의 감성을 현대적으로 재해석하는 보컬리스트. 이번 공연에서 80년대 버블 경제 시대의 화려한 감성을 표현합니다.</p>
                     </div>
                 </div>
                 
                 <div class="artist-card">
-                    <img src="/api/placeholder/400/250" alt="MonoCircle" class="artist-image">
+                    <img src="/api/placeholder/400/250" alt="QueenDia" class="artist-image">
                     <div class="artist-info">
-                        <h3 class="artist-name">MonoCircle</h3>
-                        <p class="artist-role">BAND</p>
-                        <p class="artist-description">김보람(기타)와 유민호(퍼커션)로 구성된 2인조 밴드. Experimental Rock과 Acid Jazz를 기반으로 한 그루브 중심의 사운드.</p>
+                        <h3 class="artist-name">QueenDia</h3>
+                        <p class="artist-role">VOCAL - PART 1</p>
+                        <p class="artist-description">강렬한 음색과 표현력으로 시티팝의 여성 보컬리스트를 연상시키는 아티스트. 가부키초 환락가의 화려함을 노래합니다.</p>
+                    </div>
+                </div>
+                
+                <div class="artist-card">
+                    <img src="/api/placeholder/400/250" alt="KitschNeko" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">KitschNeko</h3>
+                        <p class="artist-role">VOCAL - PART 2</p>
+                        <p class="artist-description">90년대 후반부터 2000년대의 일본 음악을 대표하는 헤이세이 시대의 차가운 감성을 담아내는 보컬리스트.</p>
+                    </div>
+                </div>
+                <!-- Vocals -->
+                <div class="artist-card">
+                    <img src="/api/placeholder/400/250" alt="FutsunoKo" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">FutsunoKo</h3>
+                        <p class="artist-role">VOCAL - PART 1</p>
+                        <p class="artist-description">일본 시티팝의 감성을 현대적으로 재해석하는 보컬리스트. 이번 공연에서 80년대 버블 경제 시대의 화려한 감성을 표현합니다.</p>
+                    </div>
+                </div>
+                
+                <div class="artist-card">
+                    <img src="/api/placeholder/400/250" alt="QueenDia" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">QueenDia</h3>
+                        <p class="artist-role">VOCAL - PART 1</p>
+                        <p class="artist-description">강렬한 음색과 표현력으로 시티팝의 여성 보컬리스트를 연상시키는 아티스트. 가부키초 환락가의 화려함을 노래합니다.</p>
+                    </div>
+                </div>
+                
+                <div class="artist-card">
+                    <img src="/api/placeholder/400/250" alt="KitschNeko" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">KitschNeko</h3>
+                        <p class="artist-role">VOCAL - PART 2</p>
+                        <p class="artist-description">90년대 후반부터 2000년대의 일본 음악을 대표하는 헤이세이 시대의 차가운 감성을 담아내는 보컬리스트.</p>
                     </div>
                 </div>
             </div>
